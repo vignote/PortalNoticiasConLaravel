@@ -53,9 +53,12 @@ class NoticiaController extends Controller
      * @return \Illuminate\Http\Response
      * http://127.0.0.1:8000/api/categoria/1?page=2
      */
-    public function categoria($categoriaId)
+    public function categoria($categoriaId, $page_number=1)
     {
-        //$noticias = Noticia::all();
+        //Indicamos q página debe ser al que debe devolver
+        Paginator::currentPageResolver(function () use ($page_number) {
+            return $page_number;
+        });
         $noticias = Noticia::where('categoriaId',$categoriaId)->paginate(10);
         return $noticias;
     }
@@ -67,9 +70,12 @@ class NoticiaController extends Controller
      * @return \Illuminate\Http\Response
      * http://127.0.0.1:8000/api/autor/1?page=2
      */
-    public function autor($autorId)
+    public function autor($autorId, $page_number=1)
     {
-        //$noticias = Noticia::all();
+        //Indicamos q página debe ser al que debe devolver
+        Paginator::currentPageResolver(function () use ($page_number) {
+            return $page_number;
+        });
         $noticias = Noticia::where('autorId',$autorId)->paginate(10);
         
         return $noticias;
