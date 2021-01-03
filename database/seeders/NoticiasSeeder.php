@@ -13,7 +13,7 @@ class NoticiasSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Noticia::factory(15)->create();
+        \App\Models\Noticia::factory(200)->create();
         
     }
 }
