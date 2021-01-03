@@ -3,8 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 
-class AutoresSeeder extends Seeder
+class CategoriasSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,6 +14,6 @@ class AutoresSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Autor::factory(5)->create();
+        \App\Models\Categoria::factory(5)->create();
     }
 }

@@ -17,7 +17,10 @@ class CreateNoticiasTable extends Migration
             $table->id();
             $table->integer('autorId');
             $table->integer('categoriaId');
-            $table->string('imagen',100);
+            $table->string('titulo',100);
+            $table->string('imagenURL',100);
+            $table->longText('contenido');
+            $table->date('F_Publicacion');
             $table->timestamps();
         });
     }
